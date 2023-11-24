@@ -6,6 +6,7 @@ const hexSection = document.querySelector("#hex");
 const hint = document.querySelector(".info");
 const colorBtn = document.querySelector("#color-btn");
 const color = document.querySelector(".color");
+const updateTitle = document.querySelector("title");
 
 // hard coded colors for simple section
 const colors = [
@@ -41,11 +42,13 @@ const getRandomNumColor = () => {
 const hexVisuals = () => {
   simpleBtn.style.color = "black";
   hexBtn.style.color = "red";
+  updateTitle.textContent = "hex section";
 };
 
 const simpleVisuals = () => {
   simpleBtn.style.color = "red";
   hexBtn.style.color = "black";
+  updateTitle.textContent = "simple section";
 };
 
 const getRandomNumHex = () => {
