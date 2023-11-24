@@ -1,5 +1,5 @@
 :root {
-  --light-bg: rgb(210, 210, 210); 
+  --light-bg: rgb(210, 210, 210);
   --dark-bg: rgb(60, 60, 60);
   --nav-bg: rgb(245, 245, 245);
   --color-bg: rgb(240, 248, 255);
@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 body {
@@ -34,11 +34,11 @@ nav {
   justify-content: space-around;
 }
 
-nav a:first-child {
+nav span:first-child {
   margin-right: 30px;
 }
 
-nav a {
+nav span {
   border: none;
   padding: 10px 0 7px 0;
   background: transparent;
@@ -49,7 +49,7 @@ nav a {
   cursor: pointer;
 }
 
-nav a:hover {
+nav span:hover {
   border-bottom: 2px solid rgba(0, 0, 0, 0.8);
 }
 
@@ -64,6 +64,8 @@ main {
 
 .color {
   display: block;
+  border: 2px dashed black;
+  margin: 20px 0 0 0;
   padding: 5px;
   background-color: var(--color-bg);
   border-radius: 8px;
@@ -80,10 +82,8 @@ main {
   cursor: pointer;
   border-radius: 5px;
   border: 2px solid var(--dark-bg);
-  transition:  transform 0.25s ease-out,
-            background 0.15s ease-out,
-            color 0.15s ease-out,
-            box-shadow 0.15s ease-out;
+  transition: transform 0.25s ease-out, background 0.15s ease-out,
+    color 0.15s ease-out, box-shadow 0.15s ease-out;
 }
 
 #color-btn:hover {
@@ -100,5 +100,5 @@ main {
 .info {
   display: block;
   font-size: 20px;
-  color: var(--hint-bg)
+  color: var(--hint-bg);
 }
