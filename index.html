@@ -5,25 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Color Flipper</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <nav>
-      <div class="nav-center">
-        <h2>color flipper</h2>
-        <div class="links">
-          <!-- <div class="menu-toggle active" id="closeMenuToggle">&#10006;</div> -->
-          <span class="simple">Simple</span>
-          <span class="hex">Hex</span>
+  <body class="bg-gray-200">
+    <nav class="bg-white p-6 shadow-lg">
+      <div class="nav-center flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-gray-800">color flipper</h2>
+        <div class="links sm:flex space-x-4">
+          <span class="simple text-gray-600 cursor-pointer">Simple</span>
+          <span class="hex text-gray-600 cursor-pointer">Hex</span>
         </div>
+        <!-- <div class="sm:hidden block">
+          <i class="big bars icon" id="hamburger-icon"></i>
+          <div class="ui simple dropdown item" id="dropdown-menu">
+            <div class="menu">
+              <div class="item simple">Simple</div>
+              <div class="item hex">Hex</div>
+            </div>
+          </div>
+        </div> -->
       </div>
     </nav>
 
-    <main>
-      <div class="container">
-        <h2>Color: <span class="color">&nbsp;</span></h2>
-        <button class="btn btn-hero" id="color-btn">click me</button>
-        <span class="info">The colors are randomized.</span>
+    <main class="flex flex-col justify-center items-center py-36">
+      <div class="container text-center">
+        <div class="bg-gray-100 p-4 w-1/4 mx-auto rounded-lg">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            <span class="color text-gray-900">&nbsp;get a new color</span>
+          </h2>
+          <button
+            class="btn btn-hero bg-gray-700 text-white px-6 py-2 rounded-full font-bold mb-4"
+            id="color-btn"
+          >
+            click me
+          </button>
+        </div>
+        <br />
+        <span class="info text-gray-900">The colors are randomized.</span>
       </div>
     </main>
     <script src="app.js"></script>
