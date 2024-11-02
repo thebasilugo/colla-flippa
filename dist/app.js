@@ -152,8 +152,7 @@ const afterButtonClick = () => {
 const findSectionToRun = () => {
     if (simpleBtn.style.color === "red") {
         simpleFunction();
-    }
-    else if (hexBtn.style.color === "red") {
+	} else if (hexBtn.style.color === "red") {
         hexFunction();
     }
 };
