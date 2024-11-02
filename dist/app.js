@@ -173,6 +173,12 @@ const hexFunction = () => {
     document.body.style.backgroundColor = hexColor;
     afterButtonClick();
 };
-simpleBtn === null || simpleBtn === void 0 ? void 0 : simpleBtn.addEventListener("click", simpleVisuals);
-hexBtn === null || hexBtn === void 0 ? void 0 : hexBtn.addEventListener("click", hexVisuals);
-colorBtn === null || colorBtn === void 0 ? void 0 : colorBtn.addEventListener("click", findSectionToRun);
+simpleBtn === null || simpleBtn === void 0
+	? void 0
+	: simpleBtn.addEventListener("click", simpleVisuals);
+hexBtn === null || hexBtn === void 0
+	? void 0
+	: hexBtn.addEventListener("click", hexVisuals);
+colorBtn === null || colorBtn === void 0
+	? void 0
+	: colorBtn.addEventListener("click", findSectionToRun);
