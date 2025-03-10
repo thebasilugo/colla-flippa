@@ -77,3 +77,162 @@
 		<script src="dist/app.js"></script>
 	</body>
 </html>
+
+<!--
+add ons: 
+	add hover styles on the simple & hex #'s'
+	save liked colors into a color palette, 
+	copy colors right off the bat, 
+	get colors to compliment what you have.   
+-->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Colla Flippa</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<style>
+			.link:hover {
+				color: #1d4ed8; /* Tailwind's blue-700 */
+				text-decoration: underline;
+			}
+			.palette {
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: 20px;
+			}
+			.color-box {
+				width: 50px;
+				height: 50px;
+				margin: 5px;
+				cursor: pointer;
+				border: 2px solid transparent;
+			}
+			.color-box:hover {
+				border-color: #1d4ed8; /* Highlight on hover */
+			}
+		</style>
+	</head>
+	<body class="bg-gray-200">
+		<nav class="bg-white p-6 shadow-lg">
+			<div class="nav-center flex justify-between items-center">
+				<h2 class="text-2xl font-bold text-gray-800">
+					<a href="#">colla flippa</a>
+				</h2>
+				<div class="links sm:flex space-x-4">
+					<span class="simple link text-gray-600 cursor-pointer text-xl">Simple</span>
+					<span class="hex link text-gray-600 cursor-pointer text-xl">Hex</span>
+				</div>
+			</div>
+		</nav>
+
+		<main class="flex flex-col justify-center items-center py-36">
+			<div class="container text-center">
+				<div class="bg-gray-100 p-4 w-3/4 md:w-1/4 mx-auto rounded-lg shadow-lg">
+					<h2 class="text-2xl font-bold text-gray-900 mb-4">
+						<span class="color text-gray-900">&nbsp;get a new color</span>
+					</h2>
+					<button class="btn btn-hero bg-gray-700 text-white px-6 py-2 rounded-full font-bold mb-4" id="color-btn">
+						click me
+					</button>
+					<br />
+					<button class="btn btn-hero bg-gray-700 text-white px-6 py-2 rounded-full font-bold mb-4" id="copy-color-btn" style="display: none;">
+						Copy Color
+					</button>
+					<div class="palette" id="color-palette"></div>
+				</div>
+				<br />
+				<span class="info text-gray-900">The colors are randomized.</span>
+			</div>
+		</main>
+		<script>
+			"use strict";
+			const simpleBtn = document.querySelector(".simple");
+			const hexBtn = document.querySelector(".hex");
+			const hint = document.querySelector(".info");
+			const colorBtn = document.querySelector("#color-btn");
+			const color = document.querySelector(".color");
+			const copyColorBtn = document.querySelector("#copy-color-btn");
+			const colorPalette = document.getElementById('color-palette');
+
+			const colors = [ /* same color array */ ];
+			const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
+			const getRandomNumColor = () => Math.floor(Math.random() * colors.length);
+			const getRandomNumHex = () => Math.floor(Math.random() * hex.length);
+
+			const afterButtonClick = () => {
+				colorBtn.innerHTML = "change color";
+				hint.innerHTML = "";
+				copyColorBtn.style.display = "inline-block";
+			};
+
+			const addColorToPalette = (color) => {
+				const colorBox = document.createElement('div');
+				colorBox.className = 'color-box';
+				colorBox.style.backgroundColor = color;
+				colorBox.addEventListener('click', () => {
+					navigator.clipboard.writeText(color).then(() => {
+						alert(`Color ${color} copied to clipboard!`);
+					});
+				});
+				colorPalette.appendChild(colorBox);
+			};
+
+			const simpleFunction = () => {
+				let randomNumber = getRandomNumColor();
+				const selectedColor = colors[randomNumber];
+				document.body.style.backgroundColor = selectedColor;
+				color.textContent = selectedColor;
+				addColorToPalette(selectedColor);
+				afterButtonClick();
+			};
+
+			const hexFunction = () => {
+				let hexColor = "#";
+				for (let i = 0; i < 6; i++) {
+					hexColor += hex[getRandomNumHex()];
+				}
+				document.body.style.backgroundColor = hexColor;
+				color.textContent = hexColor;
+				addColorToPalette(hexColor);
+				afterButtonClick();
+			};
+
+			const findSectionToRun = () => {
+				if (simpleBtn.style.color === "red") {
+					simpleFunction();
+				} else if (hexBtn.style.color === "red") {
+					hexFunction();
+				}
+			};
+
+			simpleBtn.addEventListener("click", () => {
+				simpleBtn.style.color = "red";
+				hexBtn.style.color = "black";
+				document.title = "simple section";
+			});
+
+			hexBtn.addEventListener("click", () => {
+				simpleBtn.style.color = "black";
+				hexBtn.style.color = "red";
+				document.title = "hex section";
+			});
+
+			colorBtn.addEventListener("click", findSectionToRun);
+		</script>
+	</body>
+</html>
+ -->
